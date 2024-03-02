@@ -16,11 +16,12 @@ function getData(url){
     xhr.onreadystatechange = function(){
         if(xhr.readyState !== 4) return;
         if (xhr.status === 200) {
-            console.log(xhr.responseText);
+            const response = JSON.parse(xhr.responseText);
         }
         else{
             console.log({
-             status:xhr.status
+             status:xhr.status,
+             Text: xhr.statusText
             });
         }
     }
