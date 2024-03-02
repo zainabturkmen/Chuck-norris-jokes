@@ -9,4 +9,6 @@ btn.addEventListener("click", ()=> {
     console.log("hello");
 });
 
-
+function getData(url){
+    const xhr = new XMLHttpRequest()
+}
