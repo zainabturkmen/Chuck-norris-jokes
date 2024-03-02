@@ -20,10 +20,10 @@ function getData(url){
             img.classList.add("shake-img")
             const {value:joke} = JSON.parse(xhr.responseText);
             content.textContent = joke;
-            const random = Math.random();
+            const random = Math.random() * 1000;
             setTimeout(() => {
                 img.classList.remove("shake-img");
-            }, 1000);
+            }, random);
         }
         else{
             console.log({
