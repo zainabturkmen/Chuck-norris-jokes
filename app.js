@@ -2,6 +2,7 @@
 
 const btn = document.querySelector(".btn");
 const content = document.querySelector(".content");
+
 const URL = "https://api.chucknorris.io/jokes/random";
 
 
@@ -16,7 +17,8 @@ function getData(url){
     xhr.onreadystatechange = function(){
         if(xhr.readyState !== 4) return;
         if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
+            const {value:joke} = JSON.parse(xhr.responseText);
+            content.textContent = joke
         }
         else{
             console.log({
