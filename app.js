@@ -2,7 +2,7 @@
 
 const btn = document.querySelector(".btn");
 const content = document.querySelector(".content");
-
+const img = document.querySelector(".container img")
 const URL = "https://api.chucknorris.io/jokes/random";
 
 
@@ -17,8 +17,13 @@ function getData(url){
     xhr.onreadystatechange = function(){
         if(xhr.readyState !== 4) return;
         if (xhr.status === 200) {
+            img.classList.add("shake-img")
             const {value:joke} = JSON.parse(xhr.responseText);
-            content.textContent = joke
+            content.textContent = joke;
+            const random = Math.random()
+            setTimeout(() => {
+                img.classList.remove("shake-img");
+            }, 1000);
         }
         else{
             console.log({
