@@ -10,5 +10,5 @@ btn.addEventListener("click", ()=> {
 });
 
 function getData(url){
-    const xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
 };
