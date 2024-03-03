@@ -10,7 +10,9 @@ btn.addEventListener("click", ()=> {
     // getData(URL)
     // .then(response => displayData(response))
     // .catch(err => console.log(err))
-    fetch(URL).then((data) => console.log(data))
+    fetch(URL)
+    .then((data) => data.json())
+    .then((respone) => displayData(respone))
 });
 
 function getData(url){
@@ -36,7 +38,7 @@ function getData(url){
 
 function displayData(data){
     img.classList.add("shake-img")
-    const {value:joke} = JSON.parse(data);
+    const {value:joke} = data;
     content.textContent = joke;
     const random = Math.random() * 1000;
     setTimeout(() => {
