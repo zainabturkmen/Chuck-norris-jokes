@@ -15,7 +15,7 @@ function getData(url){
         else{
             console.log({
              status:xhr.status,
-             Text: xhr.statusText
+             Text: xhr.statusTextN
             });
         }
     }
