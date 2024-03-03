@@ -7,7 +7,9 @@ const URL = "https://api.chucknorris.io/jokes/random";
 
 
 btn.addEventListener("click", ()=> {
-    getData(URL).then(response => console.log(response)).catch()
+    getData(URL)
+    .then(response => displayData(response))
+    .catch(err => console.log(err))
 });
 
 function getData(url){
@@ -33,7 +35,7 @@ function getData(url){
 
 function displayData(data){
     img.classList.add("shake-img")
-    const {value:joke} = JSON.parse(xhr.responseText);
+    const {value:joke} = JSON.parse(data);
     content.textContent = joke;
     const random = Math.random() * 1000;
     setTimeout(() => {
